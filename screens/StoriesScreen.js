@@ -16,7 +16,8 @@ export default function StoriesScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollView}>
-        <SnapCircle></SnapCircle>
+        <Image style={styles.image} source={require('../assets/Stories.png')} />
+        <SnapCircle style={styles.snapCircle}></SnapCircle>
       </ScrollView>
     </SafeAreaView>
   );
@@ -42,4 +43,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
   },
+  snapCircle: {
+
+  }
 });

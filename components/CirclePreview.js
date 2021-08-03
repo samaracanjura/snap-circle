@@ -7,6 +7,7 @@ import {
     ScrollView,
     SafeAreaView,
     StatusBar,
+    TouchableOpacity,
 } from 'react-native';
 import { StyleSheet } from "react-native";
 import { Circle } from 'react-native-maps';
@@ -16,16 +17,18 @@ const SnapCircle = () => {
     return (
         <SafeAreaView style={styles.container}>
         <ScrollView style={styles.scrollView}>
+         <View style={styles.circlesContainer}>
             {storiesData.map((item, index) => (
                 <View style={styles.circles}>
-                    <View style={styles.imageView}>
+                    <TouchableOpacity style={styles.imageView}>
                     <Image source={item.image} style={styles.image}/>
-                    </View>
-                    <Text>{item.name}</Text>
-                    <Text>{item.title}</Text>
-                    <Text>{item.company}</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.name}>{item.name}</Text>
+                    <Text style={styles.description}>{item.title}</Text>
+                    <Text style={styles.description}>{item.company}</Text>
                 </View>
             ))}
+        </View>
         </ScrollView>
         </SafeAreaView>
     )
@@ -33,31 +36,45 @@ const SnapCircle = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         paddingTop: StatusBar.currentHeight,
+        backgroundColor: '#fff',
       },
       scrollView: {
-        flex: 1,
+
+      },
+      circlesContainer: {
+        display: "flex",
+        flexDirection: 'row',
         flexWrap: 'wrap',
-        marginHorizontal: 20,
+        margin: 20,
       },
     circles: {
-        flex: 1,
+        display: "flex",
+        flexGrow: 2,
         alignItems: 'center',
         justifyContent: 'center',
         padding: 8,
     },
     imageView: {
         flex: 1,
-        backgroundColor: '#fffc00',
-        borderRadius: 60,
-        width: 120,
+
     },
     image: {
         flex: 1,
-        width: 120,
-        height: 120,
+        width: 150,
+        height: 150,
         resizeMode: 'contain',
+        backgroundColor: '#fffc00',
+        borderRadius: 75,
+        borderColor: '#c4c4c4',
+        borderWidth: 3,
+        marginBottom: 8,
+    },
+    name: {
+        fontWeight: '800',
+    },
+    description: {
+        color: '#a3a3a3'
     }
 });
 
