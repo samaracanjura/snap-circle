@@ -9,17 +9,27 @@ import {
   ImageBackground,
   StatusBar,
 } from "react-native";
-const image = require("../assets/Stories.png");
+import SnapCircle from '../components/CirclePreview';
+
+
 export default function StoriesScreen() {
   return (
-    <View style={styles.container}>
-      <ImageBackground source={image} style={styles.image}></ImageBackground>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollView}>
+        <Image style={styles.image} source={require('../assets/Stories.png')} />
+        <SnapCircle style={styles.snapCircle}></SnapCircle>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: StatusBar.currentHeight,
+  },
+  scrollView: {
+    flex: 1,
+    marginHorizontal: 5,
     flexDirection: "column",
   },
   image: {
@@ -33,4 +43,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
   },
+  snapCircle: {
+
+  }
 });
