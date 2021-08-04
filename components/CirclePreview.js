@@ -12,12 +12,13 @@ import {
 import { StyleSheet } from "react-native";
 import { Circle } from 'react-native-maps';
 import storiesData from './StoriesData';
+import Colors from '../constants/Colors';
 
 const SnapCircle = () => {
     return (
         <SafeAreaView style={styles.container}>
         <ScrollView style={styles.scrollView}>
-         <View style={styles.circlesContainer}>
+        <View style={styles.circlesContainer}>
             {storiesData.map((item, index) => (
                 <View style={styles.circles}>
                     <TouchableOpacity style={styles.imageView}>
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
         width: 150,
         height: 150,
         resizeMode: 'contain',
-        backgroundColor: '#fffc00',
+        backgroundColor: Colors.snapyellow,
         borderRadius: 75,
         borderColor: '#c4c4c4',
         borderWidth: 3,
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     },
     description: {
         color: '#a3a3a3'
-    }
+    },
 });
 
 export default SnapCircle;
