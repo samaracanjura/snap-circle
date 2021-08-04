@@ -14,7 +14,7 @@ import SnapCircle from '../components/CirclePreview';
 import Colors from '../constants/Colors';
 
 
-export default function StoriesScreen() {
+export default function StoriesScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollView}>
@@ -27,7 +27,7 @@ export default function StoriesScreen() {
               <Text style={styles.circleText}>Snap Circle</Text>
             </TouchableOpacity>
         </View>
-        <SnapCircle style={styles.snapCircle}></SnapCircle>
+        <SnapCircle navigation={navigation} style={styles.snapCircle}></SnapCircle>
       </ScrollView>
     </SafeAreaView>
   );

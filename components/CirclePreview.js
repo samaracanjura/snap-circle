@@ -8,22 +8,28 @@ import {
     SafeAreaView,
     StatusBar,
     TouchableOpacity,
+    TouchableWithoutFeedback,
 } from 'react-native';
 import { StyleSheet } from "react-native";
 import { Circle } from 'react-native-maps';
 import storiesData from './StoriesData';
 import Colors from '../constants/Colors';
+import { render } from 'react-dom';
 
-const SnapCircle = () => {
+
+const SnapCircle = (props) => {
+    console.log(props)
     return (
         <SafeAreaView style={styles.container}>
         <ScrollView style={styles.scrollView}>
         <View style={styles.circlesContainer}>
             {storiesData.map((item, index) => (
-                <View style={styles.circles}>
-                    <TouchableOpacity style={styles.imageView}>
+                <View key={index} style={styles.circles}>
+                    <TouchableWithoutFeedback onPress={() => {
+    props.navigation.navigate("CirclesStory")}} 
+                        style={styles.imageView}>
                     <Image source={item.image} style={styles.image}/>
-                    </TouchableOpacity>
+                    </TouchableWithoutFeedback>
                     <Text style={styles.name}>{item.name}</Text>
                     <Text style={styles.description}>{item.title}</Text>
                     <Text style={styles.description}>{item.company}</Text>
