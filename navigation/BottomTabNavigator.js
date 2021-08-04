@@ -11,6 +11,7 @@ import CameraScreen from "../screens/CameraScreen";
 import HomeScreen from "../screens/HomeScreen";
 import StoriesScreen from "../screens/StoriesScreen";
 import SpotlightScreen from "../screens/SpotlightScreen";
+import CirclesStory from "../screens/CirclesStory";
 import MapScreen from "../screens/MapScreen";
 
 import Colors from "../constants/Colors";
