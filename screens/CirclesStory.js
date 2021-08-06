@@ -10,24 +10,26 @@ import {
 } from "react-native";
 import styled from "styled-components/native";
 import { Video, AVPlaybackStatus } from 'expo-av';
+import GestureRecognizer from "react-native-swipe-gestures";
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export default function CirclesStory () {
+export default function CirclesStory ({ navigation }) {
     const video = React.useRef(null);
     const [status, setStatus] = React.useState({});
     return (
-      <View style={styles.container}>
+      <GestureRecognizer
+      onSwipeDown={() => navigation.goBack()} style={styles.container}>
         <Video
           ref={video}
           style={styles.video}
           source={{
-            uri: '../assets/snap-demo.MP4',
+            uri: '../assets/SnapCircle_Ruben.mp4',
           }}
           useNativeControls
           resizeMode="contain"
-          isLooping
+          isLooping={true}
           onPlaybackStatusUpdate={status => setStatus(() => status)}
         />
         <View style={styles.buttons}>
@@ -38,18 +40,24 @@ export default function CirclesStory () {
             }
           />
         </View>
-      </View>
+      </GestureRecognizer>
     );
 };
 
 const styles = StyleSheet.create({
-//   video: {
-//     height: windowHeight,
-//     position: "absolute",
-//     top: 0,
-//     left: 0,
-//     alignItems: "stretch",
-//     bottom: 0,
-//     right: 0,
-//   }
+    container: {
+      flex: 1,
+    },
+  video: {
+    height: windowHeight,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    alignItems: "stretch",
+    bottom: 0,
+    right: 0,
+  },
+  buttons: {
+    top: 200,
+  },
 });

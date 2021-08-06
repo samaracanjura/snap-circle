@@ -13,7 +13,6 @@ import {
 import SnapCircle from '../components/CirclePreview';
 import Colors from '../constants/Colors';
 
-
 export default function StoriesScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
