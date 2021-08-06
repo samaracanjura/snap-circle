@@ -1,5 +1,11 @@
 export default [
         {
+            'name': 'Ruben Cerna',
+            'title': 'Intern Project Manager',
+            'company': 'Apple',
+            image: require('../assets/individual-bitmojis/bitmoji-0.png'),
+        },
+        {
             'name': 'Adira Isa',
             'title': 'Project Management',
             'company': 'Google',
