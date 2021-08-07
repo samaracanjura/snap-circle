@@ -18,7 +18,7 @@ export default function StoriesScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollView}>
       <View style={styles.screenshotView}>
-            <Image style={styles.screenshot} source={require('../assets/Stories.png')} />
+            <Image style={styles.screenshot} source={require('../assets/snap-story.png')} />
         </View>
         <View style={styles.Row}>
             <TouchableOpacity
