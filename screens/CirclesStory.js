@@ -13,7 +13,7 @@ import { Video, AVPlaybackStatus } from 'expo-av';
 import GestureRecognizer from "react-native-swipe-gestures";
 
 const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+const windowHeight = Dimensions.get('window');
 
 export default function CirclesStory ({ navigation }) {
     const video = React.useRef(null);
@@ -24,9 +24,7 @@ export default function CirclesStory ({ navigation }) {
         <Video
           ref={video}
           style={styles.video}
-          source={{
-            uri: '../assets/SnapCircle_Ruben.mp4',
-          }}
+          source={require("../assets/SnapCircle_Ruben.mp4")}
           useNativeControls
           resizeMode="contain"
           isLooping={true}
