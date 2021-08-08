@@ -15,6 +15,7 @@ import GestureRecognizer, {swipeDirections} from "react-native-swipe-gestures";
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
+
 export default function CirclesStory ({ navigation }) {
     const video = React.useRef(null);
     const [status, setStatus] = React.useState({});
@@ -24,7 +25,7 @@ export default function CirclesStory ({ navigation }) {
         <Video
           ref={video}
           style={styles.video}
-          source={require("../assets/SnapCircle_Ruben.mp4")}
+          source={require("../assets/mentor-video.mov")}
           shouldPlay  // video will automatically play
           useNativeControls
           resizeMode="contain"
