@@ -1,5 +1,11 @@
 export default [
         {
+            'name': 'Karina Martinez',
+            'title': 'Software Engineer',
+            'company': 'Snap Inc',
+            image: require('../assets/individual-bitmojis/karina-bitmoji.png'),
+        },
+        {
             'name': 'Ruben Cerna',
             'title': 'Intern Project Manager',
             'company': 'Apple',
