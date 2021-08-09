@@ -10,10 +10,11 @@ import {
 } from "react-native";
 import styled from "styled-components/native";
 import { Video, AVPlaybackStatus } from 'expo-av';
-import GestureRecognizer from "react-native-swipe-gestures";
+import GestureRecognizer, {swipeDirections} from "react-native-swipe-gestures";
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
+
 
 export default function CirclesStory ({ navigation }) {
     const video = React.useRef(null);
@@ -24,21 +25,20 @@ export default function CirclesStory ({ navigation }) {
         <Video
           ref={video}
           style={styles.video}
-          source={{
-            uri: '../assets/SnapCircle_Ruben.mp4',
-          }}
+          source={require("../assets/mentor-video.mov")}
+          shouldPlay  // video will automatically play
           useNativeControls
           resizeMode="contain"
           isLooping={true}
           onPlaybackStatusUpdate={status => setStatus(() => status)}
         />
         <View style={styles.buttons}>
-          <Button
+          {/* <Button
             title={status.isPlaying ? 'Pause' : 'Play'}
             onPress={() =>
               status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
             }
-          />
+          /> */}
         </View>
       </GestureRecognizer>
     );
@@ -56,6 +56,9 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
     bottom: 0,
     right: 0,
+    padding: 20,
+    borderRadius: 10,
+   
   },
   buttons: {
     top: 200,
